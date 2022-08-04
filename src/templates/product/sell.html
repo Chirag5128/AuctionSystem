@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+body {font-family: Arial, Helvetica, sans-serif;}
+form {border: 3px solid #f1f1f1;}
+
+input[type=text], input[type=password] {
+  width: 100%;
+  padding: 12px 20px;
+  margin: 8px 0;
+  display: inline-block;
+  border: 1px solid #ccc;
+  box-sizing: border-box;
+}
+
+button {
+  background-color: #04AA6D;
+  color: white;
+  padding: 14px 20px;
+  margin: 8px 0;
+  border: none;
+  cursor: pointer;
+  width: 100%;
+}
+
+button:hover {
+  opacity: 0.8;
+}
+
+
+.imgcontainer {
+  text-align: center;
+  margin: 24px 0 12px 0;
+}
+
+img.avatar {
+  width: 15%;
+  border-radius: 10%;
+}
+
+.container {
+  padding: 16px;
+}
+
+span.psw {
+  float: right;
+  padding-top: 16px;
+}
+
+
+</style>
+</head>
+<body style="background-color:powderblue;">
+
+<div class="w3-container w3-red">
+<h2 style="background-color:blueviolet;">MyAuction</h2>
+</div>
+
+<center>
+<h2>SELL</h2>
+</center>
+
+<form action="." method="post"> {% csrf_token %}
+    
+
+  <div class="container">
+    
+    <label for="Product Name"><b>Product Name</b></label>
+    <input type="text" placeholder="Enter Product Name" name="Product Name" required>
+
+   <!--  <form method="post" enctype="multipart/form-data"> {% csrf_token %}
+        <label for="name"><b>Select Image</b></label>
+        <br>
+        <br>
+        <input type="file" name="fileToUpload" id="fileToUpload">
+        <input type="submit" value="Upload Image" name="submit">
+    </form>
+     {% if img_obj %}  
+        <h3>Succesfully uploaded : {{img_obj.caption}}</h3>  
+        <img src="{{ img_obj.image.url}}" alt="connect" style="max-height:300px">  
+    {% endif %}  --> 
+
+    <br>
+    <br>
+
+    <label for="Description"><b>Description</b></label>
+    <input type="text" placeholder="Enter Description" name="Description" required>
+
+    <label for="Starting Price"><b>Starting Price</b></label>
+    <input type="text" placeholder="Enter Starting Price" name="Starting Price" required>
+    
+    <label for="Duration"><b>Duration - Number of Days (Max 10)</b></label>
+    <input type="text" placeholder="Enter Duration" name="Duration" required>
+
+    <label for="uid"><b>Confirm UserID</b></label>
+    <input type="text" placeholder="Enter UserID" name="uid" required>
+
+    <label for="psw"><b>Confirm Password</b></label>
+    <input type="password" placeholder="Enter Password" name="psw" required>
+
+    <button type="submit">Sell</button>
+  </div>
+
+</form>
+
+</body>
+</html>

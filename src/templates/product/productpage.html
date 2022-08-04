@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+body {font-family: Arial, Helvetica, sans-serif;}
+form {border: 3px solid #f1f1f1;}
+
+input[type=text], input[type=password] {
+  width: 100%;
+  padding: 12px 20px;
+  margin: 8px 0;
+  display: inline-block;
+  border: 1px solid #ccc;
+  box-sizing: border-box;
+}
+
+button {
+  background-color: #04AA6D;
+  color: white;
+  padding: 14px 20px;
+  margin: 8px 0;
+  border: none;
+  cursor: pointer;
+  width: 100%;
+}
+
+button:hover {
+  opacity: 0.8;
+}
+
+
+.imgcontainer {
+  text-align: center;
+  margin: 24px 0 12px 0;
+}
+
+img.avatar {
+  width: 15%;
+  border-radius: 10%;
+}
+
+.container {
+  padding: 16px;
+}
+
+span.psw {
+  float: right;
+  padding-top: 16px;
+}
+
+
+</style>
+</head>
+<body style="background-color:powderblue;">
+
+<div class="w3-container w3-red">
+<h2 style="background-color:blueviolet;">MyAuction</h2>
+</div>
+
+<center>
+<h2>Product Name</h2>
+</center>
+
+<form action="." method="post"> {% csrf_token %}
+<!--   <div class="imgcontainer">
+    <img src="images/login.jpg" alt="Avatar" class="avatar">
+  </div> -->
+
+  <div class="container">
+    <label for="Product Name"><b>Product Name</b></label>
+    {{prod.name}}
+    <br>
+    <br>
+
+    <label for="Description"><b>Description</b></label>
+    {{prod.description}}
+    <br>
+    <br>
+
+    <label for="Time"><b>Time remaining</b></label>
+    {{time_left}}
+    <br>
+    <br>
+
+    <label for="Current Bid Price"><b>Current Bid Price</b></label>
+    {{curr_price}}
+    <br>
+    <br>
+
+    
+
+    <label for="Enter your Bid Price"><b>Enter your Bid Price</b></label>
+    <input type="text" placeholder="Bid Price" name="Enter your Bid Price" required>
+
+    <label for="uid"><b>Confirm UserID</b></label>
+    <input type="text" placeholder="Enter UserID" name="uid" required>
+
+
+    <button type="submit">Bid</button>
+  </div>
+
+</form>
+
+{% if less_bid %}
+Come On!! Bid a bit Higher
+{% endif %}
+
+</body>
+</html>

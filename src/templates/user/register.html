@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+body {font-family: Arial, Helvetica, sans-serif;}
+form {border: 3px solid #f1f1f1;}
+
+input[type=text], input[type=password] {
+  width: 100%;
+  padding: 12px 20px;
+  margin: 8px 0;
+  display: inline-block;
+  border: 1px solid #ccc;
+  box-sizing: border-box;
+}
+
+button {
+  background-color: #04AA6D;
+  color: white;
+  padding: 14px 20px;
+  margin: 8px 0;
+  border: none;
+  cursor: pointer;
+  width: 100%;
+}
+
+button:hover {
+  opacity: 0.8;
+}
+
+
+.imgcontainer {
+  text-align: center;
+  margin: 24px 0 12px 0;
+}
+
+img.avatar {
+  width: 15%;
+  border-radius: 10%;
+}
+
+.container {
+  padding: 16px;
+}
+
+span.psw {
+  float: right;
+  padding-top: 16px;
+}
+
+
+</style>
+</head>
+<body style="background-color:powderblue;">
+
+<div class="w3-container w3-red">
+<h2 style="background-color:blueviolet;">MyAuction</h2>
+</div>
+
+<center>
+<h2>Register</h2>
+</center>
+
+<form action="." method="post"> {% csrf_token %}
+<!--  <div class="imgcontainer">
+    <img src="images/login.jpg" alt="Avatar" class="avatar">
+  </div> -->
+
+  <div class="container">
+    <label for="name"><b>Name</b></label>
+    <input type="text" placeholder="Enter Name" name="name" required>
+
+    <label for="phonenumber"><b>Phone Number</b></label>
+    <input type="text" placeholder="Enter Phone Number" name="Phone Number" required>
+
+    <label for="Email"><b>Email</b></label>
+    <input type="text" placeholder="Enter Email" name="Email" required>
+    
+    <label for="uid"><b>UserID</b></label>
+    <input type="text" placeholder="Enter UserID" name="uid" required>
+
+    <label for="psw"><b>Password</b></label>
+    <input type="password" placeholder="Enter Password" name="psw" required>
+
+    <button type="submit">Register</button>
+  </div>
+
+</form>
+
+{% if uid_taken == 0 %} <p>User Registered Successfully</p> 
+{% elif uid_taken == 1 %}<p>details doesnot match</p>
+{% endif %}
+
+</body>
+</html>

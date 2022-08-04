@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+<title>homepage</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+  h1 {text-align: center;}
+  h2 {text-align: left;}
+  p {text-align: center;}
+  div {text-align: center;}
+  .block {
+  display: block;
+  width: 25%;
+  border: none;
+  background-color:lightskyblue;
+  padding: 14px 28px;
+  font-size: 16px;
+  cursor: pointer;
+  text-align: center;
+  align-self: center;
+}
+
+
+</style>
+
+<body style="background-color:powderblue;">
+
+<div class="w3-container w3-red">
+  <h2 style="background-color:blueviolet;">MyAuction</h2>
+</div>
+
+<br>
+<br>
+<br>
+
+<div class="w3-container w3-red">
+  <h1>HOME PAGE</h1>
+</div>
+
+<br>
+<br>
+<br>
+<br>
+<br>
+
+<center>
+<button class="block"><a href="{% url 'login' %}" class="w3-button w3-black">LOGIN</a></button>
+</center>
+
+<br>
+<br>
+<br>
+
+<center>
+<button class="block"><a href="{% url 'register' %}" class="w3-button w3-black">REGISTER</a></button>
+</center>
+
+</body>
+</html>

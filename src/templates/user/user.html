@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html>
+<title>homepage</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+  h1 {text-align: center;}
+  h2 {text-align: left;}
+  p {text-align: center;}
+  div {text-align: center;}
+  .block {
+  display: block;
+  width: 25%;
+  border: none;
+  background-color:lightskyblue;
+  padding: 14px 40px;
+  font-size: 16px;
+  cursor: pointer;
+  text-align: center;
+  align-self: center;
+  margin-left: 8 px;
+  left: 240px;
+}
+
+
+</style>
+
+<body style="background-color:powderblue;">
+
+<div class="w3-container w3-red">
+  <h2 style="background-color:blueviolet;">MyAuction</h2>
+</div>
+
+<br>
+<br>
+
+
+<div class="w3-container w3-red">
+  <h1>USER PAGE</h1>
+</div>
+
+<div class="w3-container w3-red">
+    <h3>Hey! What do you wish to do today?</h3>
+</div>
+  
+
+<br>
+<br>
+<br>
+
+<center>
+<button class="block"><a href="{% url 'product_list' %}" class="w3-button w3-black">BUY</a></button>
+</center>
+<br>
+<br>
+
+<center>
+<button class="block"><a href="{% url 'add_product' %}" class="w3-button w3-black">SELL</a></button>
+</center>
+<br>
+<br>
+
+<center>
+<button class="block"><a href="{% url 'old_buy' %}" class="w3-button w3-black">Bought Products</a></button>
+</center>
+<br>
+<br>
+
+<center>
+<button class="block"><a href="{% url 'old_sold' %}" class="w3-button w3-black">Sold Products</a></button>
+</center>
+<br>
+<br>
+
+
+
+</body>
+</html>
